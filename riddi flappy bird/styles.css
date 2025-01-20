@@ -1,0 +1,116 @@
+/* General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #4ec0ca 0%, #228B22 100%); 
+    /* Adjusted gradient */
+    overflow: hidden;
+}
+
+/* Game Container */
+#gameContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Canvas Styles */
+#gameCanvas {
+    border: 15px solid transparent;
+    border-image: url('https://i.imgur.com/your-pattern-image.png') 30 stretch; /* Pattern Border */
+    background-color: #4ec0ca;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Overlay Styles */
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.overlay h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.overlay button {
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #ff6b6b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+}
+
+.overlay button:hover {
+    background-color: #ee5253;
+}
+
+#finalScore {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Animated Text */
+.animated-text {
+    font-size: 36px;
+    color: #333;
+    animation: blink 1s infinite;
+}
+p{
+    margin-top: 20px;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Scoreboard Styles */
+#scoreboard {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 36px; /* Increased font size for better readability */
+    color: #fff; /* White text for contrast */
+    background: linear-gradient(45deg, #ff6b6b, #ffcc00); /* Gradient background */
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    border: 2px solid #fff; /* White border for contrast */
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+    font-weight: bold; /* Bold text for emphasis */
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#scoreboard:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    background: linear-gradient(45deg, #ffcc00, #ff6b6b); /* Reverse gradient on hover */
+}
