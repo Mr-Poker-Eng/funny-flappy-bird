@@ -36,10 +36,10 @@ images.pipe.src = 'image/pipe.png';  // Pipe image
 const bird = {
     x: 150,
     y: 150,
-    width: 50,
-    height: 55,
-    gravity: 0.6,
-    lift: -10,
+    width: 55,
+    height: 70,
+    gravity: 0.25,
+    lift: -6,
     velocity: 0,
     draw() {
         ctx.drawImage(images.bird, this.x, this.y, this.width, this.height);
@@ -70,7 +70,7 @@ const bird = {
 class Pipe {
     constructor() {
         this.top = (Math.random() * canvas.height) / 2 + 50;
-        this.bottom = (canvas.height - this.top) - 150;
+        this.bottom = (canvas.height - this.top) - 200;
         this.x = canvas.width;
         this.width = 80;
         this.scored = false;
