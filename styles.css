@@ -1,0 +1,152 @@
+/* ================== General Styles ================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #4ec0ca 0%, #228B22 100%);
+  overflow: hidden;
+}
+
+/* ================== Game Container ================== */
+#gameContainer {
+  position: relative;
+  width: 90vw;
+  max-width: 900px;
+  height: 70vh;
+  max-height: 600px;
+}
+
+/* ================== Canvas ================== */
+#gameCanvas {
+  width: 100%;
+  height: 100%;
+  border: 10px solid transparent;
+  border-image: url('https://i.imgur.com/your-pattern-image.png') 30 stretch;
+  background-color: #4ec0ca;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  border-radius: 8px;
+}
+
+/* ================== Overlays ================== */
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 5vw;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 2;
+  width: 80%;
+  max-width: 600px;
+}
+
+.overlay h1 {
+  font-size: 2vw;
+  margin-bottom: 3vh;
+  color: #333;
+}
+
+.overlay h6 {
+  font-size: 1vw;
+  margin-bottom: 2vh;
+  color: #333;
+}
+
+.overlay button {
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  color: #fff;
+  background-color: #ff6b6b;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 2vh;
+}
+
+.overlay button:hover {
+  background-color: #ee5253;
+  transform: scale(1.05);
+}
+
+#finalScore {
+  font-size: 4vw;
+  color: #333;
+  margin-top: 2vh;
+}
+
+.animated-text {
+  animation: blink 1s infinite;
+  font-size: 4vw;
+}
+
+p {
+  margin-top: 20px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ================== Scoreboard ================== */
+#scoreboard {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 3vw;
+  min-width: 80px;
+  color: #fff;
+  background: linear-gradient(45deg, #ff6b6b, #ffcc00);
+  padding: 8px 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  border: 2px solid #fff;
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  font-weight: bold;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#scoreboard:hover {
+  transform: scale(1.1);
+  background: linear-gradient(45deg, #ffcc00, #ff6b6b);
+}
+
+/* ================== Media Queries ================== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  #gameContainer { height: 65vh; }
+  #gameCanvas { border-width: 8px; }
+  .overlay { padding: 6vw; width: 85%; }
+  .overlay h1 { font-size: 7vw; }
+  .overlay h6 { font-size: 5vw; }
+  .overlay button { font-size: 4.5vw; padding: 3vw 6vw; }
+  #finalScore { font-size: 5vw; }
+  #scoreboard { font-size: 4vw; top: 12px; right: 15px; padding: 6px 12px; }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  body { flex-direction: column; }
+  #gameContainer { height: 60vh; }
+  #gameCanvas { border-width: 6px; }
+  .overlay { padding: 7vw; width: 90%; }
+  .overlay h1 { font-size: 8vw; }
+  .overlay h6 { font-size: 6vw; }
+  .overlay button { font-size: 5vw; padding: 4vw 8vw; }
+  #finalScore { font-size: 5vw; }
+  #scoreboard { font-size: 5vw; top: 10px; right: 10px; padding: 6px 10px; }
+}
